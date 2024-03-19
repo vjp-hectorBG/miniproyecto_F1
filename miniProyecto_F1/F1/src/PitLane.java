@@ -18,7 +18,17 @@ public class PitLane {
 
     
     public void intrBox() {
+        int numEquipos = pedirNum();
 
+        for (int i = 0; i < numEquipos; i++) {
+            System.out.println("Ingrese el nombre del equipo:");
+            String nombreEquipo = pedirString();
+            System.out.println("Ingrese el nombre del primer piloto:");
+            String piloto1 = pedirString();
+            System.out.println("Ingrese el nombre del segundo piloto:");
+            String piloto2 = pedirString();
+        }
+    }
     }
 
     public String pedirString() {
