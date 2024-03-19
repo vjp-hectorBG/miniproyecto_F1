@@ -1,53 +1,50 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public final class PitLane {
+public class PitLane {
     private static PitLane instance;
-    private Equipo vEquipo[];
-    private Monoplaza box[];
+    private ArrayList<Equipo> lstEquipo;
+    private ArrayList<Monoplaza> box;
 
     private PitLane() {
-        this.vEquipo = new Equipo[10];
-        this.box = new Monoplaza[10];
+        this.lstEquipo = new ArrayList<>();
+        this.box = new ArrayList<>();
     }
 
     private PitLane(ArrayList<Equipo> lstEquipo, ArrayList<Monoplaza> box) {
-        this.lstEquipo = new ArrayList<Equipo>();
-        this.box = new ArrayList<Monoplaza>();
+        this.lstEquipo = lstEquipo;
+        this.box = box;
     }
 
-
+    
     public void intrBox() {
 
     }
 
     public String pedirString() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("    Valor :");
-        String val = scanner.nextLine();
-        return val;
+        System.out.println("Ingrese un valor:");
+        return scanner.nextLine();
     }
 
     public int pedirNum() {
         Scanner scanner = new Scanner(System.in);
-        boolean min = false;
-        int val = 0;
-        while (!min) {
-            System.out.println("¿Cuantos equipos hay en el pitlane?");
+        int val;
+        do {
+            System.out.println("¿Cuántos equipos hay en el pitlane?");
             val = scanner.nextInt();
             if (val < 2) {
-                System.out.println("Porfavor introduzca un numero mayor de 2");
-            } else {
-                min = true;
+                System.out.println("Por favor, introduzca un número mayor o igual a 2.");
             }
-        }
+        } while (val < 2);
         return val;
     }
 
-    public static PitLane getInstance(ArrayList<Equipo> lstEquipo, ArrayList<Monoplaza> box) {
+    public static PitLane getInstance() {
         if (instance == null) {
-            instance = new PitLane(lstEquipo, box);
+            instance = new PitLane();
         }
         return instance;
     }
 }
+
