@@ -29,8 +29,7 @@ public class PitLane {
             String piloto2 = pedirString();
         }
     }
-    }
-
+    
     public String pedirString() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese un valor:");
