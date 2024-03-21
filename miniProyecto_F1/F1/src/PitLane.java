@@ -55,5 +55,25 @@ public class PitLane {
         }
         return instance;
     }
+
+    public static void setInstance(PitLane instance) {
+        PitLane.instance = instance;
+    }
+
+    public ArrayList<Equipo> getLstEquipo() {
+        return lstEquipo;
+    }
+
+    public void setLstEquipo(ArrayList<Equipo> lstEquipo) {
+        this.lstEquipo = lstEquipo;
+    }
+
+    public ArrayList<Monoplaza> getBox() {
+        return box;
+    }
+
+    public void setBox(ArrayList<Monoplaza> box) {
+        this.box = box;
+    }
 }
 
